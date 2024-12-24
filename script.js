@@ -19,7 +19,9 @@ function startGame () {
     guess_field.className = "guess_field";
     guess_field.innerHTML = word.split('').reduce(function (accm, item) {
         
-    }"");
+
+        
+    },"");
 
 
 
