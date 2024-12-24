@@ -17,9 +17,9 @@ let trail_num = indexWord.length + 1;
 function startGame () {
     let guess_field = document.createElement('div');
     guess_field.className = "guess_field";
-    guess_field.innerHTML = word.split('').reduce(function (accm,) {
+    guess_field.innerHTML = word.split('').reduce(function (accm, item) {
         
-    });
+    }"");
 
 
 
