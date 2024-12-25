@@ -18,11 +18,11 @@ function startGame () {
     let guess_field = document.createElement('div');
     guess_field.className = "guess_field";
     guess_field.innerHTML = word.split('').reduce(function (accm, item) {
-        
-
-        
-    },"");
-
-
+        accm += '<div class="letter"><div/> ';
+        return accm;
+    }, "");
+    guess_block.append(guess_field);
+    guess_word.onkeyup = handleTrail;
 
 }
+startGame();
