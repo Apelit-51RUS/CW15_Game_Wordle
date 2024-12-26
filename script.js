@@ -42,42 +42,43 @@ function startGame () {
     };
 
 
-    function handleTrail(e){
-        function getLetterColor(letter, i) {
+    function handleTrail (e) {
+        function getLetterColor (letter, i) {
             let char = letter.textContent;
             if (word.includes(char))
-                return word.charAt(i) === char? "green" : "yellow"
-            return "red"
-                }
+                return word.charAt(i) === char ? "green" : "yellow";
+            return "red";
+        }
 
 
         e.preventDefault();
-        if(e.key !== "Enter")
+        if (e.key !== "Enter")
             return;
-        if(e.target.value.length !== word.length)
-        {
+        if (e.target.value.length !== word.length) {
             alert("Wrong word length! Try again");
-            e.target.value = ""
+            e.target.value = "";
             return;
         }
 
 
-        trail_num --;
+        trail_num--;
         trails.textContent = "Trails left: " + trail_num;
-        let letters = document.querySelectorAll(".letter")
+        let letters = document.querySelectorAll(".letter");
 
 
 
-        for(let i = 0; i < letters.length; i++){
-            letters[i].textContent = e.target.value.charAt(i)
-            letters[i].style.color = getLetterColor(letters[i], i)
+        for (let i = 0; i < letters.length; i++) {
+            letters[i].textContent = e.target.value.charAt(i);
+            letters[i].style.color = getLetterColor(letters[i], i);
         }
 
-        if(e.target.value === word){
+        if (e.target.value === word) {
             finishGame();
         }
-        e.target.value = ""
+        e.target.value = "";
+    }
+
 }
-}
+
 
 
